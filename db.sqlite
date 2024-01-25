@@ -1,0 +1,33 @@
+import sqlite3
+
+
+def get_db():
+    return sqlite3.connect('db.sqlite')
+
+
+def create_table():
+    db = get_db()
+    db.execute('CREATE TABLE IF NOT EXISTS products (id INTEGER PRIMARY KEY, name TEXT, price Real)')
+
+
+def get_products():
+    db = get_db()
+    cursor = db.execute('select * from products')
+    return cursor.fetchall()
+
+
+def create_product(name, price):
+    # create product and return product id
+    db = get_db()
+    cursor = db.execute('insert into products (name, price) values (?,?)', (name, price))
+    db.commit()
+    return cursor.lastrowid
+
+
+def update_product(product_id,name, price):
+    db = get_db()
+    db.execute('Update products set name = ?, price = ? where id = ?', (name, price, product_id))
+    db.commit()
+
+if __name__ == '__main__':
+    create_table()
