@@ -5,26 +5,34 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d898ba41-69e6-4796-a393-fbf967f5f388" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/framework-flask-intro.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/identifier.sqlite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_main.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project_main.sqlite" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image001.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image002.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image003.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image004.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/mainnnnn" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e0ebec40-c2c0-47f1-ab8e-346a9cc4397a.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/e0ebec40-c2c0-47f1-ab8e-346a9cc4397a/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FDataBase.py" beforeDir="false" afterPath="$PROJECT_DIR$/FDataBase.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.db" beforeDir="false" afterPath="$PROJECT_DIR$/project.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" afterPath="$PROJECT_DIR$/project.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.sqbpro" beforeDir="false" afterPath="$PROJECT_DIR$/project.sqbpro" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sq_db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sq_db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/post.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FDataBase.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/framework-flask-intro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project.sqbpro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_main.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/project_main.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sq_db.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image001.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image002.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image003.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image004.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/add_post.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/page404.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/post.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/rating.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/siteme.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/test_server.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +61,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="magazin" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -79,7 +87,7 @@
     "Python.siteme.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "magazin1",
+    "git-widget-placeholder": "magazin",
     "ignore.virus.scanning.warn.message": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -263,7 +271,7 @@
       <workItem from="1706982171479" duration="2732000" />
       <workItem from="1706988642238" duration="3523000" />
       <workItem from="1707083893247" duration="664000" />
-      <workItem from="1707127628969" duration="12670000" />
+      <workItem from="1707127628969" duration="14027000" />
     </task>
     <servers />
   </component>
