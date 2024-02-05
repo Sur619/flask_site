@@ -5,34 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d898ba41-69e6-4796-a393-fbf967f5f388" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/magazin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/94150495-0fe3-4093-ac46-309bc2299db0.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/94150495-0fe3-4093-ac46-309bc2299db0/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c58f6762-bee5-4234-88d9-cd9ff95139f2.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/c58f6762-bee5-4234-88d9-cd9ff95139f2/storage_v2/_src_/schema/main.uQUzAA.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FDataBase.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/framework-flask-intro.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/identifier.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.sqbpro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_main.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project_main.sqlite" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/sq_db.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image001.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image002.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image003.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/images_html/framework-flask-intro.files/image004.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/add_post.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/contact.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/page404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/post.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/rating.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/README.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/siteme.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/test_server.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,6 +59,7 @@
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "DefaultHtmlFileTemplate": "HTML File",
+    "Python.magazin.executor": "Run",
     "Python.practice.executor": "Run",
     "Python.project.executor": "Run",
     "Python.site.executor": "Run",
@@ -110,7 +89,30 @@
       <recent name="D:\python_project\dop_study_flask\templates" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.project">
+  <component name="RunManager" selected="Python.magazin">
+    <configuration name="magazin" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="dop_study_flask" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/magazin.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="dop_study_flask" />
       <option name="ENV_FILES" value="" />
@@ -228,11 +230,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.magazin" />
         <item itemvalue="Python.siteme" />
         <item itemvalue="Python.site" />
         <item itemvalue="Python.project" />
         <item itemvalue="Python.practice" />
-        <item itemvalue="Python.siteme" />
       </list>
     </recent_temporary>
   </component>
@@ -324,5 +326,6 @@
     <SUITE FILE_PATH="coverage/dop_study_flask$site.coverage" NAME="site Coverage Results" MODIFIED="1706744180297" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dop_study_flask$siteme.coverage" NAME="siteme Coverage Results" MODIFIED="1706741218357" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/dop_study_flask$practice.coverage" NAME="practice Coverage Results" MODIFIED="1706613355989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/dop_study_flask$magazin.coverage" NAME="magazin Coverage Results" MODIFIED="1707168647617" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
