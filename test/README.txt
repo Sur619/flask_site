@@ -1,3 +1,0 @@
-requirements:
-flask == 3.0.1
-requests ==2.31.0
