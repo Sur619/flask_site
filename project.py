@@ -9,7 +9,7 @@ secret_key = '!@@#$%^&%^&^*((*()()__)_+*(&*&^%%$##@#@#'
 app = flask.Flask(__name__)
 app.config.update(dict(DATABASE=os.path.join(app.root_path, 'project.db')))
 app.config.from_object(__name__)
-
+app.secret_key = '!@@#$%^&%^&^*((*()()__)_+*(&*&^%%$##@#@#'
 
 def db_connect():
     conn = sqlite3.connect(app.config['DATABASE'])
@@ -23,7 +23,7 @@ def db_create():
     db.commit()
     db.close()
 
-db_create()
+
 
 @app.teardown_appcontext
 def close_db(error):
@@ -34,7 +34,7 @@ def close_db(error):
 def index():
     db = db_connect()
     dbase = FDataBase(db)
-    return render_template('index.html', menu=dbase.getMenu())
+    return render_template('index.html', menu=dbase.getMenu(), posts=dbase.getPostsAnonce())
 
 @app.route("/addpost", methods=["POST", "GET"])
 def addpost():
@@ -43,7 +43,7 @@ def addpost():
 
     if request.method == "POST":
         if len(request.form['name']) > 4 and len(request.form['post']) > 10:
-            res = dbase.addpost(request.form['name'], request.form['post'])
+            res = dbase.addpost(request.form['name'], request.form['post'], request.form['url'])
             if not res:
                 flash('Ошибка добавления статьи', category='error')
             else:
@@ -53,12 +53,12 @@ def addpost():
 
     return render_template('add_post.html', menu=dbase.getMenu(), title="Добавление статьи")
 
-@app.route('/post/<int:id_post>')
-def showPost(id_post):
+@app.route('/post/<alias>')
+def showPost(alias):
     db = db_connect()
     dbase = FDataBase(db)
 
-    title, post = dbase.getPost(id_post)
+    title, post = dbase.getPost(alias)
     if not title:
         abort(404)
 
