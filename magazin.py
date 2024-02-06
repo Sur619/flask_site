@@ -1,5 +1,5 @@
 import flask
-from flask import jsonify
+from flask import jsonify, request, flash
 import requests
 
 fake_store_api_url = 'https://fakestoreapi.com/'
@@ -33,13 +33,32 @@ def get_store_info():
 Категория category
 В ответ должно прийти что товар добавлен и его ИД
 В случае неудачи - сообщение об ошибке"""
+@app.route('/add_post', methods= ['POST','GET'])
+def add_post():
+    url = 'https://fakestoreapi.com/products'
+    data = {
+        'title':'smth',
+        'price':20,
+        'description':'new item',
+        'image':'https:url',
+        'category':'item'
+    }
+    response = requests.post(url, json=data)
+    if requests.methods == "POST":
+
+        if response.status_code == 200:
+            flash('item added to store')
+            print(response.json())
+
+        else:
+            flash('item not added to store')
+            print(response.status_code)
 
 
 
 
 
-
-
+    return 
 
 #3
 """3) Добавить функию для обновления информации о товаре, начинается со слов update...
