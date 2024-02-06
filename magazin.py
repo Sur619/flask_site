@@ -1,29 +1,28 @@
 import flask
-from flask import jsonify, request, flash
+from flask import jsonify, request, flash, request
 import requests
 
 fake_store_api_url = 'https://fakestoreapi.com/'
 
-
 app = flask.Flask(__name__)
-
-#1
+app.secret_key = '!@#$&^(*(*()&**%$%#@#'
+# 1
 """1) Функция которая будет выводить все товары, она должна начинаться со слова get.... 
 Можешь вывести все данные что есть у каждого товара или только названия, не важно"""
+
 
 @app.route('/products', methods=['GET'])
 def get_store_info():
     fake_store_products = 'https://fakestoreapi.com/products'
-    response = requests.get(fake_store_products)
     try:
+        response = requests.get(fake_store_products)
         data = response.json()
-
         return jsonify(data)
     except requests.exceptions.RequestException as e:
         return jsonify({'error': f'Failed to fetch data from Fake Store API: {str(e)}'})
 
 
-#2
+# 2
 """2) Функция для добавление нового товара, она должна начинаться со слов create.... или add.... 
 Тут нужно сделать функцию которая принимает такие параметры:
 Заголовок title
@@ -33,44 +32,95 @@ def get_store_info():
 Категория category
 В ответ должно прийти что товар добавлен и его ИД
 В случае неудачи - сообщение об ошибке"""
-@app.route('/add_post', methods= ['POST','GET'])
-def add_post():
+
+
+@app.route('/add_post', methods=['POST', 'GET'])
+def add_post(title=None, price=None, description=None, image=None, category=None):
     url = 'https://fakestoreapi.com/products'
+    '''data = {
+        'title': request.form['title'],
+        'price': request.form['price'],
+        'description': request.form['description'],
+        'image': request.form['image'],
+        'category': request.form['category']
+    }'''
+
+    '''data = {
+        'title': title,
+        'price': price,
+        'description': description,
+        'image': image,
+        'category': category
+    }'''
     data = {
-        'title':'smth',
-        'price':20,
-        'description':'new item',
-        'image':'https:url',
-        'category':'item'
+        'title': request.form.get('title'),
+        'price': request.form.get('price'),
+        'description': request.form.get('description'),
+        'image': request.form.get('image'),
+        'category': request.form.get('category')
     }
-    response = requests.post(url, json=data)
-    if requests.methods == "POST":
-
+    try:
+        response = requests.post(url, json=data)
         if response.status_code == 200:
-            flash('item added to store')
-            print(response.json())
-
+            flash('Item added to store')
+            return jsonify({'added_product': response.json(), 'id_of_product': response.json()['id']}), 200
         else:
-            flash('item not added to store')
-            print(response.status_code)
+            flash('Failed to sent item to store')
+            return jsonify({'error': 'Failed to sent item to store'}, response.status_code)
+    except requests.exceptions.RequestException as e:
+        return jsonify({'error': f'Request to Fake Store API failed: {str(e)}'}), 500
 
 
-
-
-
-    return 
-
-#3
+# 3
 """3) Добавить функию для обновления информации о товаре, начинается со слов update...
 Тут также как в функции с добавлением товара, но все поля не обязательные, т.е можно обновить только 1 поле, а таже обязательное поле ид
 При успешном обновлении товара - вывести все данные"""
 
 
+@app.route('/update_product/<int:product_id>', methods=['PATCH', 'PUT', 'GET'])
+def update_product(product_id):
+    url = f"https://fakestoreapi.com/products/{product_id}"
+
+    data = {
+        'title': request.form.get('title'),
+        'price': request.form.get('price'),
+        'description': request.form.get('description'),
+        'image': request.form.get('image'),
+        'category': request.form.get('category')
+    }
+
+    try:
+        response = requests.patch(url, json=data)
+        if response.status_code == 200:
+            updated_product_id = response.json().get('id')
+            flash(f'Item {product_id} updated')
+            return jsonify({'updated_product': response.json(), 'updated_product_id': updated_product_id,
+                            'message': f'Item {updated_product_id} updated successfully'}), 200
+
+        else:
+            flash('Failed to update item')
+            return jsonify({'error': 'Failed to update item'}), response.status_code
+    except requests.exceptions.RequestException as e:
+        return jsonify({'error': f'Request to Fake Store API failed: {str(e)}'}), 500
 
 
-#4
+# 4
 """4) Удаление товара, функция начинается на delete...
 Функция должна принимать ид товара который нужно удалить"""
+@app.route('/del_product/<int:id>', methods=['DELETE','GET'])
+def delete_product(id):
+    url = f"https://fakestoreapi.com/products/{id}"
+    try:
+        response = requests.delete(url)
+        if response.status_code==200:
+            flash(f"product {id} deleted")
+            return jsonify({'deleted_product':id}),200
+        else:
+            flash(f"failed to delete product{id}")
+            return jsonify({'error': f'failed to delete product{id}'}), response.status_code
+    except requests.exceptions.RequestException as e:
+        return jsonify({'error': f'Request to Fake Store API failed: {str(e)}'}), 500
+
 
 
 if __name__ == '__main__':
