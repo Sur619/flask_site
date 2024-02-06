@@ -35,23 +35,9 @@ def get_store_info():
 
 
 @app.route('/add_post', methods=['POST', 'GET'])
-def add_post(title=None, price=None, description=None, image=None, category=None):
+def add_post():
     url = 'https://fakestoreapi.com/products'
-    '''data = {
-        'title': request.form['title'],
-        'price': request.form['price'],
-        'description': request.form['description'],
-        'image': request.form['image'],
-        'category': request.form['category']
-    }'''
 
-    '''data = {
-        'title': title,
-        'price': price,
-        'description': description,
-        'image': image,
-        'category': category
-    }'''
     data = {
         'title': request.form.get('title'),
         'price': request.form.get('price'),
