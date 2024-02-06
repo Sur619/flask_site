@@ -1,11 +1,12 @@
 import flask
-from flask import jsonify, request, flash, request
+from flask import jsonify, request, flash, request, redirect, url_for, render_template
 import requests
 
 fake_store_api_url = 'https://fakestoreapi.com/'
 
 app = flask.Flask(__name__)
 app.secret_key = '!@#$&^(*(*()&**%$%#@#'
+
 # 1
 """1) Функция которая будет выводить все товары, она должна начинаться со слова get.... 
 Можешь вывести все данные что есть у каждого товара или только названия, не важно"""
@@ -34,7 +35,7 @@ def get_store_info():
 В случае неудачи - сообщение об ошибке"""
 
 
-@app.route('/add_post', methods=['POST', 'GET'])
+'''@app.route('/add_post', methods=['POST', 'GET'])
 def add_post():
     url = 'https://fakestoreapi.com/products'
 
@@ -55,6 +56,36 @@ def add_post():
             return jsonify({'error': 'Failed to sent item to store'}, response.status_code)
     except requests.exceptions.RequestException as e:
         return jsonify({'error': f'Request to Fake Store API failed: {str(e)}'}), 500
+
+    return render_template('add_item.html')
+'''
+@app.route('/add_post', methods=['POST', 'GET'])
+def add_post():
+    if request.method == 'POST':
+        url = 'https://fakestoreapi.com/products'
+
+        data = {
+            'title': request.form.get('title'),
+            'price': request.form.get('price'),
+            'description': request.form.get('description'),
+            'image': request.form.get('image'),
+            'category': request.form.get('category')
+        }
+        try:
+            response = requests.post(url, json=data)
+            if response.status_code == 201:
+                flash('Item added to store')
+                added_product = response.json()
+                return render_template('add_item.html', added_product=added_product)
+            else:
+                flash('Failed to send item to store')
+                error_message = f'Failed to send item to store. Status code: {response.status_code}'
+                return render_template('add_item.html', error=error_message)
+        except requests.exceptions.RequestException as e:
+            error_message = f'Request to Fake Store API failed: {str(e)}'
+            return render_template('add_item.html', error=error_message)
+
+    return render_template('add_item.html')
 
 
 # 3

@@ -1,0 +1,12 @@
+{% block content %}
+<form action="/add_post" method="post" enctype="multipart/form-data">
+    <p><label>Title: </label><input type="text" name="title" value="" required/></p>
+    <p><label>Price: </label><input type="text" name="price" value="" required/></p>
+    <p><label>Description: </label></p>
+    <p><textarea name="description" rows="7" cols="40" required></textarea></p>
+    <p><input type="file" id="image" name="image" accept="image/*"></p>
+    <p><label>Category</label><input type="text" name="category" value="" required/></p>
+    <p><input type="submit" value="Sent"/></p>
+</form>
+{% endblock %}
+
