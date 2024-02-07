@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Product Details</h1>
+        <table class="product-table">
+            <tbody>
+                <tr>
+                    <th>ID</th>
+                    <td>{{ product.id }}</td>
+                </tr>
+                <tr>
+                    <th>Title</th>
+                    <td>{{ product.title }}</td>
+                </tr>
+                <tr>
+                    <th>Price</th>
+                    <td>{{ product.price }}</td>
+                </tr>
+                <tr>
+                    <th>Description</th>
+                    <td>{{ product.description }}</td>
+                </tr>
+                <tr>
+                    <th>Category</th>
+                    <td>{{ product.category }}</td>
+                </tr>
+                <tr>
+                    <th>Image</th>
+                    <td><img src="{{ product.image }}" alt="{{ product.title }}" width="200"></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- Добавляем кнопку для удаления товара -->
+        <form action="/del_product/{{ product.id }}" method="post">
+            <button type="submit" class="btn-delete">Delete Product</button>
+        </form>
+    </div>
+</body>
+</html>
