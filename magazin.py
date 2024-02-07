@@ -18,7 +18,7 @@ def get_product_info(product_id):
             return None
     except requests.exceptions.RequestException as e:
         return None
-
+#выводит продукт по айди 
 @app.route('/product/<int:product_id>', methods=['GET', 'DELETE'])
 def display_product(product_id):
     product = get_product_info(product_id)
@@ -40,7 +40,7 @@ def get_all_products():
         return jsonify({'error': f'Failed to fetch data from Fake Store API: {str(e)}'})
 
 
-# Функция для добавления нового товара
+
 # Функция для добавления нового товара
 @app.route('/add_product', methods=['POST','GET'])
 def add_product():
@@ -67,7 +67,7 @@ def add_product():
     else:
         return render_template('add_item.html')
 
-# Функция для обновления информации о товаре
+# Функция для обновления информации о товаре по его айди 
 @app.route('/update_product/<int:product_id>', methods=['POST', 'GET'])
 def update_product(product_id):
     if request.method == 'POST':
@@ -100,7 +100,7 @@ def update_product(product_id):
             return redirect(url_for('get_all_products'))
 
 
-# Функция для удаления товара
+# Функция для удаления товара по его айди 
 @app.route('/del_product/<int:product_id>', methods=['POST', 'GET'])
 def delete_product(product_id):
     if request.method == 'POST':
